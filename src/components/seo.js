@@ -2,6 +2,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
+import logoCloudShuttle from "../images/cloud_shuttle_logo_awesome.png";
+import favicon from "../images/cloudicon.ico";
 
 function SEO({ description, lang, meta, keywords, title }) {
   const { site } = useStaticQuery(graphql`
@@ -41,6 +43,10 @@ function SEO({ description, lang, meta, keywords, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: logoCloudShuttle,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -68,13 +74,15 @@ function SEO({ description, lang, meta, keywords, title }) {
         .concat(meta)}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-    />
+    >
+    <link rel="icon" href={favicon} />
+    </Helmet>
   );
 }
 
 SEO.defaultProps = {
   lang: `en`,
-  keywords: [],
+  keywords: [`Cloud Shuttle`, `Peter Hanssens`, `Community Consulting`, `Serverless`, `Data Engineering`],
   meta: [],
 };
 
