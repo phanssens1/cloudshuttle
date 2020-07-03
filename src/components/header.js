@@ -57,7 +57,7 @@ function Header() {
               key={link.title}
               href={link.route}
             >
-              {link.title}
+              <p className="block mt-4 text-white no-underline md:inline-block md:mt-0 md:ml-6">{link.title}</p>
             </Link>
           ))}
         </nav>

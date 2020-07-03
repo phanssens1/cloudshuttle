@@ -27,6 +27,12 @@ function IndexPage() {
       </section>
 
       <section className="text-center">
+        <div className="inline-block p-3 mb-4 text-xl ">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/wdwUz-ubH-E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section className="text-center">
         <div className="flex flex-wrap md:flex-no-wrap lg:flex-no-wrap xl:flex-no-wrap">
           <CARDS
             title="Community"
