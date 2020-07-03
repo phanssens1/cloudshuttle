@@ -1,24 +1,8 @@
-import { useStaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
-import logoCloudShuttle from "../images/cloud_shuttle_logo_awesome.png";
-import favicon from "../images/cloudicon.ico";
 
 function SEO({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(graphql`
-    query DefaultSEOQuery {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-        }
-      }
-    }
-  `);
-
-  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -28,7 +12,7 @@ function SEO({ description, lang, meta, keywords, title }) {
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:title`,
@@ -36,7 +20,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:type`,
@@ -44,7 +28,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:image`,
-          content: logoCloudShuttle,
+          content: "/images/cloud_shuttle_logo_awesome.png",
         },
         {
           name: `twitter:card`,
@@ -52,7 +36,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: "Peter Hanssens",
         },
         {
           name: `twitter:title`,
@@ -60,7 +44,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
         },
       ]
         .concat(
@@ -73,9 +57,8 @@ function SEO({ description, lang, meta, keywords, title }) {
         )
         .concat(meta)}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
     >
-    <link rel="icon" href={favicon} />
+    <link rel="icon" href="/images/cloudicon.ico" />
     </Helmet>
   );
 }

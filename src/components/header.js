@@ -1,22 +1,13 @@
-import { graphql, useStaticQuery, Link } from "gatsby";
 import React, { useState } from "react";
+import Link from 'next/link'
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
-  const { site } = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
 
   return (
     <header className="bg-gray-700">
       <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8">
-        <Link to="/">
+        <Link href="/">
           <h1 className="flex items-center text-white no-underline">
             <svg 
               className="w-8 h-8 mr-2 fill-current"
@@ -24,10 +15,10 @@ function Header() {
               width="54"
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 20 20">
-              <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1z"/>
+              <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1z" />
             </svg>
             <span className="text-xl font-bold tracking-tight">
-              {site.siteMetadata.title}
+              Cloud Shuttle
             </span>
           </h1>
         </Link>
@@ -61,10 +52,10 @@ function Header() {
               title: `Contact`,
             },
           ].map((link) => (
-            <Link
+            <Link 
               className="block mt-4 text-white no-underline md:inline-block md:mt-0 md:ml-6"
               key={link.title}
-              to={link.route}
+              href={link.route}
             >
               {link.title}
             </Link>

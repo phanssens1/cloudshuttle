@@ -1,25 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import dataEngBytes from "../images/bytes_center.svg";
-import developer from "../images/undraw_developer.png";
-import teaching from "../images/undraw_teaching.png";
 
 
 
-function Layout({title, description, keywords}) {
-    let Blah = <img className="w-full h-48" src={dataEngBytes} alt="Sunset in the mountains" />
+function Layout({title, description, keywords, image}) {
+    let Blah = <img className="w-full h-48" src="/images/bytes_center.svg" alt="Sunset in the mountains" />
     switch (title) {
         case 'Community':
-            Blah = <img className="w-full h-48" src={dataEngBytes} alt="Community" />
+            Blah = <img className="w-full h-48" src="/images/bytes_center.svg" alt="Community" />
             break;
         case 'Consulting':
-            Blah = <img className="w-full h-48" src={developer} alt="Consulting" />
+            Blah = <img className="w-full h-48" src="/images/undraw_developer.png" alt="Consulting" />
             break;
         case 'Teaching':
-            Blah = <img className="w-full h-48" src={teaching} alt="Teaching" />
+            Blah = <img className="w-full h-48" src="/images/undraw_teaching.png" alt="Teaching" />
             break;
         default:
-            Blah = <img className="w-full h-48" src={developer} alt="Sunset in the mountains" />
+            Blah = <img className="w-full h-48" src="/images/undraw_developer.png" alt="Sunset in the mountains" />
       }
 
     console.log(keywords)
@@ -28,8 +25,8 @@ function Layout({title, description, keywords}) {
     );
 
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-            {Blah}
+        <div className="max-w-sm rounded overflow-hidden shadow-lg m-2">
+            <img className="w-full h-48" src={image} alt="Community" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{title}</div>
                 <p className="text-gray-700 text-base">
