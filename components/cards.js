@@ -1,60 +1,70 @@
 import React from "react";
-import PropTypes from "prop-types";
 
+const cardDetails = [
+    {
+        "name": "Community",
+        "description": "The power of community is when enthusiastic people come together and share what they know and don't know - thus growing from their collective knowledge!",
+        "keywords": [`DataEngBytes`, `ServerlessDays`, `Meetups`, `Conferences`],
+        "images": '<img className="w-full h-48" src="/images/bytes_center.svg" alt="Community" />',
+        "image": "/images/dataenglogo.jpg"
+    },
+    {
+        "name": "Consulting",
+        "description": "Often time I hear businesses just wanting that new dashboard created, or that data source onboarded or to clean up their infrastracture - we can help with that!",
+        "keywords": [`Data Engineering`, `Serverless`, `AWS`, `Cloud`],
+        "images": '<img className="w-full h-48" src="/images/undraw_developer.svg" alt="Consulting" />',
+        "image": "/images/undraw_developer.png"
+    },
+    {
+        "name": "Teaching",
+        "description": "Invariably the missing ingredient in consulting engagements is the lack of 'how-to' knowledge within a business to enable its employees - this covers that!",
+        "keywords": [`Mentoring`, `Workshops`, `Walk-throughs`],
+        "images": '<img className="w-full h-48" src="/images/undraw_teaching.svg" alt="Teaching" />',
+        "image": "/images/undraw_teaching.png"
+    },
+]
 
-
-function Layout({title, description, keywords, image}) {
-    let Blah = <img className="w-full h-48" src="/images/bytes_center.svg" alt="Sunset in the mountains" />
-    switch (title) {
-        case 'Community':
-            Blah = <img className="w-full h-48" src="/images/bytes_center.svg" alt="Community" />
-            break;
-        case 'Consulting':
-            Blah = <img className="w-full h-48" src="/images/undraw_developer.png" alt="Consulting" />
-            break;
-        case 'Teaching':
-            Blah = <img className="w-full h-48" src="/images/undraw_teaching.png" alt="Teaching" />
-            break;
-        default:
-            Blah = <img className="w-full h-48" src="/images/undraw_developer.png" alt="Sunset in the mountains" />
-      }
-
-    const listItems = keywords.map((keyword) =>  
-    <span key={keyword.id} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{keyword}</span>
-    );
-
+export default function Cards() {
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg m-2">
-            <img className="w-full h-48" src={image} alt="Community" />
-            <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{title}</div>
-                <p className="text-gray-700 text-base">
-                {description}
+        <>
+          <div class="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+            <div class="absolute inset-0">
+              <div class="bg-white h-1/3 sm:h-2/3"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto">
+              <div class="text-center">
+                <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+                  Services
+                </h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                  The three core pillars of the company
                 </p>
-            </div>
-            <div className="px-6 py-4">
-                {listItems}
-                {/* <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#photography</span>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#travel</span>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#winter</span> */}
-            </div>
+              </div>
+              <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+
+                {cardDetails.map(data => 
+                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover" src={data.image} alt="" />
+                  </div>
+                  <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                      <a href="#" class="block mt-2">
+                        <p class="text-xl font-semibold text-gray-900">
+                          {data.name}
+                        </p>
+                        <p class="mt-3 text-base text-gray-500">
+                          {data.description}
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                )}
+
+          </div>
         </div>
-  );
+      </div>
+    </>
+  )
 }
-
-Layout.defaultProps = {
-    lang: `en`,
-    title: ``,
-    image: ``,
-    description: ``,
-    keywords: [],
-};
-
-Layout.propTypes = {
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    keywords: PropTypes.arrayOf(PropTypes.string),
-};
-
-export default Layout;

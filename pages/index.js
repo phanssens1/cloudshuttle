@@ -26,33 +26,17 @@ function IndexPage() {
       </section>
 
       <section className="text-center">
-        <div className="inline-block p-3 mb-4">
-          <iframe src="https://www.youtube.com/embed/wdwUz-ubH-E" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        <div id="responsiveVideoWrapper" className="relative h-0 pb-fluid-video">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/wdwUz-ubH-E"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
 
-      <section className="text-center">
-        <div className="flex flex-wrap md:flex-no-wrap lg:flex-no-wrap xl:flex-no-wrap">
-          <CARDS
-            title="Community"
-            image="/images/bytes_center.svg"
-            description="The power of community is when enthusiastic people come together and share what they know and don't know - thus growing from their collective knowledge!"
-            keywords={[`DataEngBytes`, `ServerlessDays`, `Meetups`, `Conferences`]}
-          />
-          <CARDS
-            title="Consulting"
-            image="/images/undraw_developer.png"
-            description="Often time I hear businesses just wanting that new dashboard created, or that data source onboarded or to clean up their infrastracture - we can help with that!"
-            keywords={[`Data Engineering`, `Serverless`, `AWS`, `Cloud`]}
-          />
-          <CARDS
-            title="Teaching"
-            image="/images/undraw_teaching.png"
-            description="Invariably the missing ingredient in consulting engagements is the lack of 'how-to' knowledge within a business to enable its employees - this covers that!"
-            keywords={[`Mentoring`, `Workshops`, `Walk-throughs`]}
-          />
-        </div>
-      </section>
+      <CARDS />
     </Layout>
   );
 }
