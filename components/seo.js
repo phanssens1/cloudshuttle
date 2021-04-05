@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { Helmet } from "react-helmet";
+import Head from 'next/head'
 
 function SEO({ description, lang, meta, keywords, title }) {
 
   return (
-    <Helmet
+    <Head
       htmlAttributes={{
         lang,
       }}
@@ -59,7 +59,7 @@ function SEO({ description, lang, meta, keywords, title }) {
       title={title}
     >
     <link rel="icon" href="/images/cloudicon.ico" />
-    </Helmet>
+    </Head>
   );
 }
 
