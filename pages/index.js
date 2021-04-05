@@ -1,6 +1,5 @@
+import "tailwindcss/tailwind.css"
 import React from "react";
-import Head from 'next/head'
-import Link from 'next/link'
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -27,8 +26,8 @@ function IndexPage() {
       </section>
 
       <section className="text-center">
-        <div className="inline-block p-3 mb-4 text-xl ">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/wdwUz-ubH-E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div className="inline-block p-3 mb-4">
+          <iframe src="https://www.youtube.com/embed/wdwUz-ubH-E" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
       </section>
 

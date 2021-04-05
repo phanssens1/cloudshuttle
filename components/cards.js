@@ -19,7 +19,6 @@ function Layout({title, description, keywords, image}) {
             Blah = <img className="w-full h-48" src="/images/undraw_developer.png" alt="Sunset in the mountains" />
       }
 
-    console.log(keywords)
     const listItems = keywords.map((keyword) =>  
     <span key={keyword.id} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{keyword}</span>
     );
