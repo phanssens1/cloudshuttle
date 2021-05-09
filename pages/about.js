@@ -25,7 +25,7 @@ function AboutPage() {
         </div>
 
         <figure className="w-2/3 md:w-1/3">
-          <img alt="A dog relaxing" src="/images/peter_square.png" />
+          <img alt="Peter Hanssens" src="/images/peter_hanssens_new.jpg" />
         </figure>
       </section>
     </Layout>
